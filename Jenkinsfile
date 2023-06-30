@@ -1,7 +1,7 @@
 pipeline {  
     environment {
       registry = "osanamgcj/mobead_image_build"
-      registryCredential = 'cartaxo'
+      registryCredential = 'Dockerhub'
       dockerImage = ''
     }
     agent any 
@@ -22,7 +22,7 @@ pipeline {
         stage('Delivery image') {
             steps{
                 script {
-                  docker.withRegistry('https://registry-1.docker.io/v2/', 'cartaxo') {
+                  docker.withRegistry('https://registry-1.docker.io/v2/', 'Dockerhub') {
                    dockerImage.push("$BUILD_NUMBER")
                   }
                 }
