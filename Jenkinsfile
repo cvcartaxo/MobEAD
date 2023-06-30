@@ -28,7 +28,7 @@ pipeline {
                 }
             }
         }
-        stage('Delivery image') {
+        stage('Delivery run image') {
             steps{
                 script {
                   sh 'docker run -p -d 81:80 --name=mobead_image_build' + dockerImage
@@ -36,5 +36,5 @@ pipeline {
             }
         }
 
-    } 
+    }
 }
