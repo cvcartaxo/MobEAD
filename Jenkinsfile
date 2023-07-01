@@ -31,7 +31,7 @@ pipeline {
         stage('Delivery run image') {
             steps{
                 script {
-                  sh 'docker run --name mobead_image_build:latest -d -p 81:80'
+                  sh 'docker run -p 81:80 -d cartaxovc/mobead_image_build:latest'
                 }
             }
         }
