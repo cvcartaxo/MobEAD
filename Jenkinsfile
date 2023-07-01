@@ -31,7 +31,7 @@ pipeline {
         stage('Delivery run image') {
             steps{
                 script {
-                  sh 'docker run -d -p 81:80 --name=mobead_image_build:latest' + dockerImage
+                  sh 'docker run --name mobead_image_build:latest -d -p 81:80'
                 }
             }
         }
